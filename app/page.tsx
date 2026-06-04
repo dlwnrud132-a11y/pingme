@@ -52,7 +52,6 @@ export default function Home() {
       <nav className="fixed top-0 w-full z-50 bg-[#0D0D1A]/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center font-black text-white text-sm">P</div>
             <span className="text-white font-black text-xl tracking-tight">핑미 <span className="gradient-text">PingMe</span></span>
           </div>
           <div className="flex items-center gap-2">
