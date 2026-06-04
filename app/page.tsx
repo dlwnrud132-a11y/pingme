@@ -78,11 +78,15 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* 배경 그라데이션 */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0a1e] via-[#0D0D1A] to-[#0a0a2e]" />
-        {/* 배경 orb 효과 */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF2D78]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#A855F7]/10 rounded-full blur-3xl" />
+        {/* 배경 영상 */}
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-0">
+          <source src="/hero.mp4" type="video/mp4" />
+        </video>
+        {/* 영상 위 오버레이 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D1A]/70 via-[#0D0D1A]/50 to-[#0D0D1A]/90 z-[1]" />
+        {/* orb 효과 */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF2D78]/10 rounded-full blur-3xl z-[2]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#A855F7]/10 rounded-full blur-3xl z-[2]" />
 
         <div className="relative z-10 text-center px-4 pt-24 pb-16 max-w-4xl mx-auto">
           {/* 배지 */}
