@@ -327,7 +327,6 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 gradient-bg rounded-lg flex items-center justify-center font-black text-white text-xs">P</div>
               <span className="text-white font-black">핑미 PingMe</span>
             </div>
             <div className="text-center text-[#AAAACC] text-sm space-y-1">
