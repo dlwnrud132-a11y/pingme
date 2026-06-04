@@ -331,8 +331,8 @@ export default function Home() {
               <span className="text-white font-black">핑미 PingMe</span>
             </div>
             <div className="text-center text-[#AAAACC] text-sm space-y-1">
-              <p>주식회사 핑미 | 서울특별시 강남구 논현동</p>
-              <p>고객지원: <a href="mailto:pingme.info@gmail.com" className="text-[#FF2D78] hover:underline">pingme.info@gmail.com</a></p>
+              <p>주식회사 핑미 | 서울특별시 강남구 학동로 165, 2층 208호</p>
+              <p>고객지원: <a href="mailto:pingme.support@gmail.com" className="text-[#FF2D78] hover:underline">pingme.support@gmail.com</a></p>
             </div>
             <div className="flex gap-4 text-xs text-[#AAAACC]">
               <a href="#" className="hover:text-white transition-colors">이용약관</a>
