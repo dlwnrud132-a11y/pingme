@@ -346,14 +346,14 @@ export default function Home() {
               <div key={i} className="group" style={{perspective: "1000px"}}>
                 <div className="relative w-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]" style={{transformStyle: "preserve-3d", minHeight: "220px"}}>
                   {/* 앞면 */}
-                  <div className="absolute inset-0 review-card rounded-2xl p-6" style={{backfaceVisibility: "hidden"}}>
-                    <div className="flex gap-0.5 mb-4">
+                  <div className="absolute inset-0 review-card rounded-2xl p-5 flex flex-col overflow-hidden" style={{backfaceVisibility: "hidden"}}>
+                    <div className="flex gap-0.5 mb-3 flex-shrink-0">
                       {Array(r.stars).fill(0).map((_, j) => (
                         <span key={j} className="text-[#FF2D78] text-sm">★</span>
                       ))}
                     </div>
-                    <p className="text-[#AAAACC] text-sm leading-relaxed mb-5">"{r.text}"</p>
-                    <div className="border-t border-white/5 pt-4">
+                    <p className="text-[#AAAACC] text-xs leading-relaxed flex-1 overflow-hidden" style={{display: "-webkit-box", WebkitLineClamp: 7, WebkitBoxOrient: "vertical", overflow: "hidden"}}>"{r.text}"</p>
+                    <div className="border-t border-white/5 pt-3 mt-3 flex-shrink-0">
                       <p className="text-white font-bold text-sm">{r.name}</p>
                       <p className="text-[#AAAACC] text-xs">{r.age}세 · {r.job}</p>
                     </div>
