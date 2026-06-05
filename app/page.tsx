@@ -103,8 +103,8 @@ export default function Home() {
 
           {/* 부제 */}
           <p className="text-xl md:text-2xl text-[#AAAACC] font-medium mb-4 leading-relaxed">
-            지금 누군가<br />
-            <span className="text-white font-bold">당신을 기다리고 있어요</span>
+            지금 핑미에,<br />
+            <span className="text-white font-bold">당신을 기다리는 사람이 있습니다.</span>
           </p>
           <p className="text-sm md:text-base text-[#AAAACC] mb-10">
             가입 30초 · 연결 23초 · 첫 영상통화 무료
@@ -236,7 +236,7 @@ export default function Home() {
               <div key={i} className="glass-card rounded-3xl p-8 text-center">
                 <div className="mb-4">
                   <span className="text-5xl md:text-6xl font-black gradient-text">{item.num}</span>
-                  {item.label && <span className="text-2xl font-black text-white ml-1">{item.label}</span>}
+                  {item.label && <span className="text-5xl md:text-6xl font-black gradient-text ml-1">{item.label}</span>}
                 </div>
                 <p className="text-[#AAAACC] text-xs mb-4">{item.sub}</p>
                 <h3 className="text-white font-black text-lg mb-3">{item.title}</h3>
@@ -254,7 +254,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <p className="text-[#A855F7] font-bold text-sm uppercase tracking-widest mb-4">THE SOLUTION</p>
             <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
-              핑미가<br /><span className="gradient-text">다릅니다</span>
+              핑미는<br /><span className="gradient-text">다릅니다</span>
             </h2>
           </div>
 
@@ -343,16 +343,33 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {reviews.map((r, i) => (
-              <div key={i} className="review-card rounded-2xl p-6">
-                <div className="flex gap-0.5 mb-4">
-                  {Array(r.stars).fill(0).map((_, j) => (
-                    <span key={j} className="text-[#FF2D78] text-sm">★</span>
-                  ))}
-                </div>
-                <p className="text-[#AAAACC] text-sm leading-relaxed mb-5">"{r.text}"</p>
-                <div className="border-t border-white/5 pt-4">
-                  <p className="text-white font-bold text-sm">{r.name}</p>
-                  <p className="text-[#AAAACC] text-xs">{r.age}세 · {r.job}</p>
+              <div key={i} className="group" style={{perspective: "1000px"}}>
+                <div className="relative w-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]" style={{transformStyle: "preserve-3d", minHeight: "220px"}}>
+                  {/* 앞면 */}
+                  <div className="absolute inset-0 review-card rounded-2xl p-6" style={{backfaceVisibility: "hidden"}}>
+                    <div className="flex gap-0.5 mb-4">
+                      {Array(r.stars).fill(0).map((_, j) => (
+                        <span key={j} className="text-[#FF2D78] text-sm">★</span>
+                      ))}
+                    </div>
+                    <p className="text-[#AAAACC] text-sm leading-relaxed mb-5">"{r.text}"</p>
+                    <div className="border-t border-white/5 pt-4">
+                      <p className="text-white font-bold text-sm">{r.name}</p>
+                      <p className="text-[#AAAACC] text-xs">{r.age}세 · {r.job}</p>
+                    </div>
+                  </div>
+                  {/* 뒷면 */}
+                  <div className="absolute inset-0 rounded-2xl p-6 flex flex-col items-center justify-center text-center [transform:rotateY(180deg)]" style={{backfaceVisibility: "hidden", background: "linear-gradient(135deg, #FF2D78, #A855F7)"}}>
+                    <div className="flex gap-1 mb-4">
+                      {Array(r.stars).fill(0).map((_, j) => (
+                        <span key={j} className="text-white text-lg">★</span>
+                      ))}
+                    </div>
+                    <p className="text-white font-black text-2xl mb-1">{r.name}</p>
+                    <p className="text-white/80 text-sm mb-4">{r.age}세 · {r.job}</p>
+                    <div className="w-12 h-0.5 bg-white/40 mb-4" />
+                    <p className="text-white/90 text-xs leading-relaxed">"{r.text.slice(0, 60)}..."</p>
+                  </div>
                 </div>
               </div>
             ))}
