@@ -76,9 +76,9 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{minHeight: "100svh"}}>
         {/* 배경 영상 */}
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-0">
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover object-center z-0" style={{minHeight: "100%", minWidth: "100%"}}>
           <source src="/hero.mp4" type="video/mp4" />
         </video>
         {/* 영상 위 오버레이 */}
@@ -120,6 +120,80 @@ export default function Home() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#AAAACC]">
           <span className="text-xs">스크롤</span>
           <div className="w-px h-8 bg-gradient-to-b from-[#FF2D78] to-transparent"></div>
+        </div>
+      </section>
+
+
+      {/* 실시간 매칭 현황 */}
+      <section className="py-20 px-4 overflow-hidden relative" style={{background: "linear-gradient(180deg, #0D0D1A 0%, rgba(168,40,120,0.15) 50%, #0D0D1A 100%)"}}>
+        <div className="text-center mb-10">
+          <span className="text-[#FF2D78] font-bold text-sm uppercase tracking-widest italic block mb-3">
+            🔴 실시간 매칭 현황
+          </span>
+          <h2 className="text-2xl md:text-4xl font-black text-white">
+            지금 이 순간, 누군가 새로운 인연을 만나고 있습니다
+          </h2>
+        </div>
+        <div className="relative overflow-hidden">
+          <div className="flex gap-4 animate-[scrollMatch_60s_linear_infinite] whitespace-nowrap" style={{width: "max-content"}}>
+            {[
+              { names: ["주원", "하은"], msg: "님과 {1}님이 연결되었습니다", time: "방금" },
+              { names: ["50대", "40대"], msg: " 회원님과 {1} 회원님이 영상통화 중입니다", time: "12초 전" },
+              { names: ["", "10분"], msg: "대화가 {1}을 넘었습니다 🎊", time: "18초 전" },
+              { names: ["승우", ""], msg: "님이 대화를 시작했습니다", time: "22초 전" },
+              { names: ["", "매칭 성공!"], msg: "새로운 커플이 {1} 💑", time: "29초 전" },
+              { names: ["준서", "민서"], msg: "님과 {1}님이 연결되었습니다", time: "35초 전" },
+              { names: ["건우", ""], msg: "님이 접속했습니다 🌴", time: "41초 전" },
+              { names: ["", "3분"], msg: "첫 통화가 {1}을 넘었습니다 ⏱️", time: "47초 전" },
+              { names: ["하준", "윤서"], msg: "님과 {1}님이 연결되었습니다", time: "53초 전" },
+              { names: ["35세", "42세"], msg: " 회원님과 {1} 회원님이 대화 중입니다", time: "방금" },
+              { names: ["시우", ""], msg: "님이 매칭을 시작했습니다", time: "8초 전" },
+              { names: ["", "15분"], msg: "대화가 {1}을 넘었습니다 🔥", time: "14초 전" },
+              { names: ["연우", "유진"], msg: "님과 {1}님이 연결되었습니다", time: "19초 전" },
+              { names: ["", "매칭 성공!"], msg: "새로운 커플이 {1} ❤️", time: "26초 전" },
+              { names: ["수호", ""], msg: "님이 대화를 시작했습니다", time: "31초 전" },
+              { names: ["45세", "38세"], msg: " 회원님과 {1} 회원님이 영상통화 중입니다", time: "38초 전" },
+              { names: ["정우", "서윤"], msg: "님과 {1}님이 연결되었습니다", time: "50초 전" },
+              { names: ["민재", ""], msg: "님이 매칭을 시작했습니다", time: "56초 전" },
+              { names: ["", "매칭 성공!"], msg: "새로운 커플이 {1} 🎉", time: "방금" },
+              { names: ["동현", "예린"], msg: "님과 {1}님이 연결되었습니다", time: "20초 전" },
+            ].concat([
+              { names: ["주원", "하은"], msg: "님과 {1}님이 연결되었습니다", time: "방금" },
+              { names: ["50대", "40대"], msg: " 회원님과 {1} 회원님이 영상통화 중입니다", time: "12초 전" },
+              { names: ["", "10분"], msg: "대화가 {1}을 넘었습니다 🎊", time: "18초 전" },
+              { names: ["승우", ""], msg: "님이 대화를 시작했습니다", time: "22초 전" },
+              { names: ["", "매칭 성공!"], msg: "새로운 커플이 {1} 💑", time: "29초 전" },
+              { names: ["준서", "민서"], msg: "님과 {1}님이 연결되었습니다", time: "35초 전" },
+              { names: ["건우", ""], msg: "님이 접속했습니다 🌴", time: "41초 전" },
+              { names: ["", "3분"], msg: "첫 통화가 {1}을 넘었습니다 ⏱️", time: "47초 전" },
+              { names: ["하준", "윤서"], msg: "님과 {1}님이 연결되었습니다", time: "53초 전" },
+              { names: ["35세", "42세"], msg: " 회원님과 {1} 회원님이 대화 중입니다", time: "방금" },
+              { names: ["시우", ""], msg: "님이 매칭을 시작했습니다", time: "8초 전" },
+              { names: ["", "15분"], msg: "대화가 {1}을 넘었습니다 🔥", time: "14초 전" },
+              { names: ["연우", "유진"], msg: "님과 {1}님이 연결되었습니다", time: "19초 전" },
+              { names: ["", "매칭 성공!"], msg: "새로운 커플이 {1} ❤️", time: "26초 전" },
+              { names: ["수호", ""], msg: "님이 대화를 시작했습니다", time: "31초 전" },
+              { names: ["45세", "38세"], msg: " 회원님과 {1} 회원님이 영상통화 중입니다", time: "38초 전" },
+              { names: ["정우", "서윤"], msg: "님과 {1}님이 연결되었습니다", time: "50초 전" },
+              { names: ["민재", ""], msg: "님이 매칭을 시작했습니다", time: "56초 전" },
+              { names: ["", "매칭 성공!"], msg: "새로운 커플이 {1} 🎉", time: "방금" },
+              { names: ["동현", "예린"], msg: "님과 {1}님이 연결되었습니다", time: "20초 전" },
+            ]).map((item, i) => (
+              <div key={i} className="inline-flex items-center gap-4 bg-white/5 border border-white/10 px-6 py-4 rounded-full mx-2 flex-shrink-0">
+                <div className="flex -space-x-2">
+                  <span className="w-10 h-10 rounded-full bg-[#8C1911] flex items-center justify-center text-lg border-2 border-[#0D0D1A]">👨</span>
+                  <span className="w-10 h-10 rounded-full bg-[#8C1911] flex items-center justify-center text-lg border-2 border-[#0D0D1A]">👩</span>
+                </div>
+                <span className="text-white font-medium text-sm">
+                  {item.names[0] && <strong className="text-[#FF2D78]">{item.names[0]}</strong>}
+                  {item.msg.split("{1}")[0]}
+                  {item.names[1] && <strong className="text-[#FF2D78]">{item.names[1]}</strong>}
+                  {item.msg.split("{1}")[1] || ""}
+                </span>
+                <span className="text-white/40 text-xs ml-2 flex-shrink-0">{item.time}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
