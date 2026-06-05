@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   keywords: "소개팅, 영상통화, 데이트, 30대, 40대, 50대, 인연, 만남, 채팅, 핑미, PingMe",
   authors: [{ name: "PingMe" }],
   robots: "index, follow",
+  verification: { google: "aODX6WRy5uX__gNtlBeYla5nNzmnC8xHi9hlRsKyGgM" },
   metadataBase: new URL("https://www.pingme.co.kr"),
   alternates: { canonical: "https://www.pingme.co.kr" },
   openGraph: {
