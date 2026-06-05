@@ -117,3 +117,24 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: #FF2D78; border-radius: 10px; }
+
+/* 모바일 영상 최적화 */
+@media (max-width: 768px) {
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+}
+
+/* 실시간 매칭 스크롤 애니메이션 */
+@keyframes scrollMatch {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
