@@ -168,7 +168,7 @@ export const privacyContent = `주식회사 핑미(이하 "회사")는 개인정
 9. 개인정보보호 관리책임자
 
 이름: 오민형
-이메일: jkmoon.dev@gmail.com
+이메일: pingme.support@gmail.com
 
 기타 문의:
 - 개인정보침해신고센터: privacy.kisa.or.kr / 국번없이 118
